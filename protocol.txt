@@ -1,0 +1,68 @@
+/
+User            Gin HTTP Server
+|  -------------> |
+Login page
+
+
+/login
+Headers
+Authorization: Basic user:password
+Return  
+JSON 
+{
+    "connected": true
+    "user": {
+        "name": "Louis",
+        "email": "loaum229@student.liu.se",
+        "io-secret": "Secret_string"
+
+    }
+}
+
+Show dash board
+
+- Join a Game
+- Stats
+- Game history
+- Find a user or a game
+
+Init SocketIO connection
+
+Client ----> SocketIO_Server
+/identity
+{
+    "user": "Louis",
+    "secret": "secret" 
+}
+
+Store info in map of connected players
+
+/join
+Client ----> SocketIO_Server
+{
+    "gameName": "game"
+}
+
+
+/choose position
+Client ----> SocketIO_Server
+{
+    "gameName": "game"
+}
+
+
+
+SocketIO_Server ---->  Client
+/start game
+resp 
+{
+   
+}
+
+SocketIO_Server ---->  Client
+/hand
+resp 
+[
+    {}
+]
+
